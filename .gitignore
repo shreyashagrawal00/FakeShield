@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+.env
+
+# TensorFlow Models
+*.h5
+*.keras
+
+# Uploads
+uploads/
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Node
+frontend/node_modules/
+
+# Vite
+frontend/dist/
+
+# Dataset
+dataset/
+
+# Temporary files
+temp/
+tmp/
