@@ -7,7 +7,7 @@ export const uploadVideo = async (file) => {
   formData.append("file", file);
 
   const response = await axios.post(
-    "http://localhost:8000/predict",
+    "http://127.0.0.1:8001/predict",
     formData
   );
 

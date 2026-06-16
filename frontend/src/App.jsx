@@ -1,11 +1,8 @@
-import Upload from "./components/Upload";
+import Upload from "./components/upload";
 
 function App() {
   return (
-    <div>
-      <h1>FakeShield</h1>
-      <Upload />
-    </div>
+    <Upload />
   );
 }
 

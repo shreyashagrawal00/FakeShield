@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #051424;
+  --color-on-surface: #d4e4fa;
+  --color-primary: #adc6ff;
+  --color-on-background: #d4e4fa;
+  --color-secondary-fixed: #f0dbff;
+  --color-surface-bright: #2c3a4c;
+  --color-surface-variant: #273647;
+  --color-secondary: #ddb7ff;
+  --color-surface-dim: #051424;
+  --color-surface-tint: #adc6ff;
+  --color-surface-container: #122131;
+  --color-primary-fixed: #d8e2ff;
+  --color-on-primary-container: #00285d;
+  --color-primary-fixed-dim: #adc6ff;
+  --color-on-error-container: #ffdad6;
+  --color-surface-container-high: #1c2b3c;
+  --color-on-secondary: #490080;
+  --color-on-tertiary: #283044;
+  --color-on-secondary-fixed: #2c0051;
+  --color-on-tertiary-fixed-variant: #3f465c;
+  --color-on-tertiary-fixed: #131b2e;
+  --color-tertiary: #bec6e0;
+  --color-primary-container: #4d8eff;
+  --color-tertiary-fixed: #dae2fd;
+  --color-outline: #8c909f;
+  --color-error-container: #93000a;
+  --color-outline-variant: #424754;
+  --color-tertiary-container: #8990a8;
+  --color-secondary-fixed-dim: #ddb7ff;
+  --color-inverse-surface: #d4e4fa;
+  --color-on-surface-variant: #c2c6d6;
+  --color-inverse-primary: #005ac2;
+  --color-inverse-on-surface: #233143;
+  --color-on-error: #690005;
+  --color-on-tertiary-container: #22293d;
+  --color-surface-container-lowest: #010f1f;
+  --color-tertiary-fixed-dim: #bec6e0;
+  --color-on-secondary-container: #d6a9ff;
+  --color-on-primary-fixed-variant: #004395;
+  --color-on-primary-fixed: #001a42;
+  --color-error: #ffb4ab;
+  --color-on-secondary-fixed-variant: #6900b3;
+  --color-surface-container-highest: #273647;
+  --color-secondary-container: #6f00be;
+  --color-surface-container-low: #0d1c2d;
+  --color-on-primary: #002e6a;
+  --color-surface: #051424;
+
+  --spacing-gutter: 24px;
+  --spacing-unit: 8px;
+  --spacing-container-max: 1440px;
+  --spacing-sidebar-width: 280px;
+  --spacing-margin-desktop: 40px;
+  --spacing-margin-mobile: 16px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.glass-panel {
+    background: rgba(18, 33, 49, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card-hover {
+    transition: all 0.3s ease;
+}
+
+.glass-card-hover:hover {
+    border-color: rgba(173, 198, 255, 0.3);
+    background: rgba(18, 33, 49, 0.8);
+}
+
+.glow-primary {
+    box-shadow: 0 0 20px rgba(173, 198, 255, 0.15);
+}
+
+.status-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .5; }
+}
+
+/* Custom Typography Helper Classes */
+.font-body-md { font-family: 'Inter', sans-serif; }
+.font-body-sm { font-family: 'Inter', sans-serif; }
+.font-body-lg { font-family: 'Inter', sans-serif; }
+.font-headline-xl { font-family: 'Montserrat', sans-serif; }
+.font-headline-lg { font-family: 'Montserrat', sans-serif; }
+.font-headline-md { font-family: 'Montserrat', sans-serif; }
+.font-label-caps { font-family: 'Inter', sans-serif; text-transform: uppercase; }
+.font-mono-data { font-family: 'JetBrains Mono', monospace; }
+
+.text-headline-xl { font-size: 48px; line-height: 56px; letter-spacing: -0.02em; font-weight: 700; }
+.text-headline-lg { font-size: 32px; line-height: 40px; letter-spacing: -0.01em; font-weight: 600; }
+.text-headline-md { font-size: 24px; line-height: 32px; font-weight: 600; }
+.text-body-lg { font-size: 18px; line-height: 28px; font-weight: 400; }
+.text-body-md { font-size: 16px; line-height: 24px; font-weight: 400; }
+.text-body-sm { font-size: 14px; line-height: 20px; font-weight: 400; }
+.text-label-caps { font-size: 12px; line-height: 16px; letter-spacing: 0.1em; font-weight: 700; }
+.text-mono-data { font-size: 13px; line-height: 18px; font-weight: 500; }
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #273647;
+    border-radius: 10px;
+}
