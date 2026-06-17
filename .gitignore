@@ -1,39 +1,169 @@
-# Python
+# ============================================================
+# FakeShield AI — .gitignore
+# ============================================================
+
+# ------------------------------------------------------------
+# Python / FastAPI Backend
+# ------------------------------------------------------------
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
 *.pyo
 *.pyd
+*.pdb
 
-# Virtual Environment
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
 venv/
+env/
+.venv/
+ENV/
 .env
+.env.*
+!.env.example
 
-# TensorFlow Models
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+*.hypothesis/
+
+# mypy / type checkers
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+
+# ------------------------------------------------------------
+# Machine Learning Models & Weights
+# ------------------------------------------------------------
 *.h5
 *.keras
+*.ckpt
+*.ckpt.*
+*.pb
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.safetensors
+backend/models/
 
-# Uploads
+# ------------------------------------------------------------
+# Uploaded & Processed Media (backend)
+# ------------------------------------------------------------
+backend/uploads/
 uploads/
 
-# Logs
-*.log
+# ------------------------------------------------------------
+# Datasets (large binary assets — not for version control)
+# ------------------------------------------------------------
+image_dataset/
+video_dataset/
+dataset/
+data/
+datasets/
 
-# VS Code
-.vscode/
-
-# OS Files
-.DS_Store
-Thumbs.db
-
-# Node
+# ------------------------------------------------------------
+# Node.js / React Frontend
+# ------------------------------------------------------------
+node_modules/
 frontend/node_modules/
 
-# Vite
+# Vite build output
 frontend/dist/
+frontend/.vite/
+dist/
+.vite/
 
-# Dataset
-dataset/
+# Dependency lock files (keep package-lock.json, ignore yarn)
+yarn.lock
+.yarn/
+.pnp.*
 
-# Temporary files
+# Env files (frontend)
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# ------------------------------------------------------------
+# Logs
+# ------------------------------------------------------------
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ------------------------------------------------------------
+# Editor & IDE Files
+# ------------------------------------------------------------
+# VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json.example
+
+# JetBrains / PyCharm / WebStorm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Vim / Emacs swaps
+*.swp
+*.swo
+*~
+
+# ------------------------------------------------------------
+# OS Generated Files
+# ------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+.directory
+
+# ------------------------------------------------------------
+# Temporary & Scratch Files
+# ------------------------------------------------------------
 temp/
 tmp/
+*.tmp
+*.bak
+*.orig
+*.rej
+.cache/

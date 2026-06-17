@@ -4,7 +4,7 @@ from tensorflow.keras.models import load_model
 
 from frame_extractor import extract_frames
 
-model = load_model("deepfake_model.h5")
+model = load_model("models/video_model.h5")
 
 def predict_video(video_path):
 

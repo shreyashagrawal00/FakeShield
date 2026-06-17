@@ -2,11 +2,12 @@ import os
 
 from fastapi import FastAPI, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from predict import predict_video
+
+from predict_video import predict_video
+from predict_image import predict_image
 
 app = FastAPI()
 
-# Configure CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -30,6 +31,17 @@ async def predict(file: UploadFile):
     with open(path, "wb") as f:
         f.write(await file.read())
 
-    result = predict_video(path)
+    ext = file.filename.split(".")[-1].lower()
 
-    return result
+    image_ext = ["jpg", "jpeg", "png", "webp"]
+    video_ext = ["mp4", "avi", "mov", "mkv"]
+
+    if ext in image_ext:
+        return predict_image(path)
+
+    elif ext in video_ext:
+        return predict_video(path)
+
+    return {
+        "error": "Unsupported file type"
+    }

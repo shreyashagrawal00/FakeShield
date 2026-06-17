@@ -1,9 +1,7 @@
 import axios from "axios";
 
-export const uploadVideo = async (file) => {
-
+export const uploadMedia = async (file) => {
   const formData = new FormData();
-
   formData.append("file", file);
 
   const response = await axios.post(
@@ -13,3 +11,6 @@ export const uploadVideo = async (file) => {
 
   return response.data;
 };
+
+// Backward compatibility alias
+export const uploadVideo = uploadMedia;
