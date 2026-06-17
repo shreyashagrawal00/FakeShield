@@ -1,0 +1,49 @@
+# ============================================================
+# FakeShield AI — Docker Compose
+# Services: backend (FastAPI) + frontend (React/nginx)
+# ============================================================
+
+services:
+
+  # ----------------------------------------------------------
+  # Backend — FastAPI + TensorFlow
+  # ----------------------------------------------------------
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: fakeshield-backend
+    ports:
+      - "8001:8001"
+    volumes:
+      # Mount model files so you don't need to bake them into the image
+      - ./backend/models:/app/models
+      # Persist uploaded files between restarts
+      - ./backend/uploads:/app/uploads
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/docs"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ----------------------------------------------------------
+  # Frontend — React built by Vite, served via nginx
+  # ----------------------------------------------------------
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        # This tells the React app where to find the backend.
+        # When running docker-compose, the backend is accessible
+        # via the host machine's IP or localhost from the browser.
+        VITE_API_URL: http://localhost:8001
+    container_name: fakeshield-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped

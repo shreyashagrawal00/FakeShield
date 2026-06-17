@@ -684,7 +684,18 @@ Environment Status: SECURE / VERIFIED
                     </div>
 
                     <div className="text-center bg-black/30 p-4 rounded-lg border border-white/5">
-                      <h4 className={`font-headline-md text-xl font-bold tracking-widest ${resultColorClass} uppercase mb-1`}>
+                      {/* Explicit REAL / FAKE pill badge */}
+                      <div className="flex justify-center mb-3">
+                        <span className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full font-mono-data font-bold text-sm tracking-widest border ${
+                          isFake
+                            ? 'bg-error/15 text-error border-error/40 shadow-[0_0_12px_rgba(255,51,102,0.25)]'
+                            : 'bg-emerald-500/15 text-emerald-400 border-emerald-500/40 shadow-[0_0_12px_rgba(0,255,136,0.2)]'
+                        }`}>
+                          <span className={`w-2 h-2 rounded-full ${isFake ? 'bg-error' : 'bg-emerald-400'} ${isFake ? 'status-pulse' : ''}`}></span>
+                          {isFake ? 'FAKE' : 'REAL'}
+                        </span>
+                      </div>
+                      <h4 className={`font-headline-md text-base font-bold tracking-widest ${resultColorClass} uppercase mb-1`}>
                         {isFake ? 'MALICIOUS DEEPFAKE' : 'AUTHENTIC MEDIA'}
                       </h4>
                       <p className="text-[10px] text-on-surface-variant font-mono-data">
