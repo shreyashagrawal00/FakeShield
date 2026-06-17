@@ -3,7 +3,7 @@
 # Base: Python 3.10 slim
 # ============================================================
 
-FROM python:3.10-slim
+FROM python:3.11-slim
 
 # Install system dependencies required by OpenCV & TensorFlow
 RUN apt-get update && apt-get install -y --no-install-recommends \

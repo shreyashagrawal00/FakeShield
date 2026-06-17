@@ -1,6 +1,7 @@
 fastapi
 uvicorn
-tensorflow
+tensorflow==2.21.0
+keras==3.14.1
 opencv-python
 numpy
 scikit-learn

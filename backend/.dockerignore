@@ -1,14 +1,8 @@
-# Backend .dockerignore
 venv/
 .venv/
 __pycache__/
 *.pyc
 *.pyo
-*.h5
-*.keras
-*.pt
-*.pth
-models/
 uploads/
 .env
 .env.*
