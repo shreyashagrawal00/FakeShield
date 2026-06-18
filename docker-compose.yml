@@ -40,7 +40,7 @@ services:
         # This tells the React app where to find the backend.
         # When running docker-compose, the backend is accessible
         # via the host machine's IP or localhost from the browser.
-        VITE_API_URL: http://localhost:8001
+        VITE_API_URL: /api
     container_name: fakeshield-frontend
     ports:
       - "5173:80"
