@@ -9,6 +9,7 @@ services:
   # Backend — FastAPI + TensorFlow
   # ----------------------------------------------------------
   backend:
+    image: shreyashagrawal00/fakeshield-backend:latest
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -33,6 +34,7 @@ services:
   # Frontend — React built by Vite, served via nginx
   # ----------------------------------------------------------
   frontend:
+    image: shreyashagrawal00/fakeshield-frontend:latest
     build:
       context: ./frontend
       dockerfile: Dockerfile
